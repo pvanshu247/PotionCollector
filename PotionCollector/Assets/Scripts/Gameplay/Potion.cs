@@ -3,19 +3,14 @@ using DG.Tweening;
 
 public class Potion : MonoBehaviour
 {
+    private bool _isCollected = false;
+
     void Update()
     {
 #if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                if (hit.transform == transform)
-                {
-                    Collect();
-                }
-            }
+            HandleRaycast();
         }
 #else
         if (Input.touchCount > 0)
@@ -23,22 +18,29 @@ public class Potion : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began)
             {
-                Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                if (Physics.Raycast(ray, out RaycastHit hit))
-                {
-                    if (hit.transform == transform)
-                    {
-                        Collect();
-                    }
-                }
+                HandleRaycast();
             }
         }
 #endif
     }
 
+    private void HandleRaycast()
+    {
+        if (_isCollected) return; 
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            if (hit.transform == transform)
+            {
+                Collect();
+            }
+        }
+    }
+
     void Collect()
     {
-        Debug.Log("Collecting Potion");
+        if (_isCollected) return;
+        _isCollected = true;
         UIManager.RaiseScoreChanged(1);
         transform.DOScale(Vector3.zero, 0.2f)
             .SetEase(Ease.InBack)
