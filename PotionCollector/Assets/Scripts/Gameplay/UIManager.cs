@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI timerText;
-    private int currentScore = 0;
+    private int _currentScore = 0;
 
     public static event Action<int> OnScoreChanged;
 
@@ -18,8 +18,8 @@ public class UIManager : MonoBehaviour
 
     private void IncreaseScore(int amount)
     {
-        currentScore += amount;
-        scoreText.text = $"Score: {currentScore.ToString()}";
+        _currentScore += amount;
+        scoreText.text = $"Score: {_currentScore.ToString()}";
     }
 
     private void UpdateTimerUI(float timeRemaining)
