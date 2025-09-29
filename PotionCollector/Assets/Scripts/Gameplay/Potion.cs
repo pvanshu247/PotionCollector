@@ -5,18 +5,6 @@ public class Potion : MonoBehaviour
 {
     void Update()
     {
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            Ray ray = Camera.main.ScreenPointToRay(touch.position);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                if (hit.transform == transform)
-                {
-                    Collect();
-                }
-            }
-        }
 #if UNITY_EDITOR
         if (Input.GetMouseButtonDown(0))
         {
@@ -26,6 +14,22 @@ public class Potion : MonoBehaviour
                 if (hit.transform == transform)
                 {
                     Collect();
+                }
+            }
+        }
+#else
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                if (Physics.Raycast(ray, out RaycastHit hit))
+                {
+                    if (hit.transform == transform)
+                    {
+                        Collect();
+                    }
                 }
             }
         }
