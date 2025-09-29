@@ -33,7 +33,7 @@ public class PotionSpawner : MonoBehaviour
             var prefabToSpawn = potionPrefabs[randomIndex];
             var obj = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
             StartCoroutine(DestroyObject(obj));
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(Random.Range(0.5f, 2f));
         }
     }
 
@@ -65,7 +65,7 @@ public class PotionSpawner : MonoBehaviour
 
     private IEnumerator DestroyObject(GameObject obj)
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(Random.Range(0.7f, 2.2f));
         if (obj != null)
             obj.transform.DOScale(Vector3.zero, 0.2f)
                 .SetEase(Ease.InBack)
