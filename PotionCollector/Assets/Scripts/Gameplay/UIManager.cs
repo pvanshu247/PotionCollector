@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -9,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite pauseSprite;
     [SerializeField] private Sprite playSprite;
     [SerializeField] private Image buttonImage;
+    [SerializeField] private GameObject gameOverPanel;
 
     private bool _isPaused = false;
 
@@ -25,7 +27,11 @@ public class UIManager : MonoBehaviour
 
     private void UpdateTimerUI(float timeRemaining)
     {
-        if (timeRemaining <= 0) timeRemaining = 0;
+        if (timeRemaining <= 0)
+        {
+            gameOverPanel.SetActive(true);
+            timeRemaining = 0;
+        }
         int minutes = Mathf.FloorToInt(timeRemaining / 60);
         int seconds = Mathf.FloorToInt(timeRemaining % 60);
         timerText.text = $"Timer: {minutes:00}:{seconds:00}";
@@ -45,6 +51,16 @@ public class UIManager : MonoBehaviour
             EventManager.RaiseGameResumed();
             buttonImage.sprite = pauseSprite;
         }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     private void OnDisable()
