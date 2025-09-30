@@ -503,7 +503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8176600786737770877, guid: aedc940a8ff2b4fffbea43f7fa869580, type: 3}
       propertyPath: m_Name
-      value: GPVFX_POTION B
+      value: POTION B
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1869240621089033962, guid: aedc940a8ff2b4fffbea43f7fa869580, type: 3}
@@ -626,7 +626,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3904505315350786137, guid: fb263f4704b2543ea84e4e9932cafedf, type: 3}
       propertyPath: m_Name
-      value: GPVFX_POTION C
+      value: POTION C
       objectReference: {fileID: 0}
     - target: {fileID: 7452357796689825704, guid: fb263f4704b2543ea84e4e9932cafedf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -878,6 +878,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1132860646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1132860647}
+  - component: {fileID: 1132860648}
+  m_Layer: 0
+  m_Name: FirebaseAuthentication
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1132860647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132860646}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1132860648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132860646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8779749a8114b42b823afde3328af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1605648551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1070,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1682567422316685028, guid: c8e4e585dfde348ec80c53d5498288ce, type: 3}
       propertyPath: m_Name
-      value: GPVFX_POTION A
+      value: POTION A
       objectReference: {fileID: 0}
     - target: {fileID: 5287852521167419820, guid: c8e4e585dfde348ec80c53d5498288ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1223,3 +1267,4 @@ SceneRoots:
   - {fileID: 701758554}
   - {fileID: 825926670}
   - {fileID: 1605648553}
+  - {fileID: 1132860647}

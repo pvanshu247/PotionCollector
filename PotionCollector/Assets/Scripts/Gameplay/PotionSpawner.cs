@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 
 public class PotionSpawner : MonoBehaviour
 {
-    public static event Action<float> OnTimerUpdated;
     public List<GameObject> potionPrefabs;
     public float spawnInterval = 2f;
 
@@ -32,6 +31,9 @@ public class PotionSpawner : MonoBehaviour
             var randomIndex = Random.Range(0, potionPrefabs.Count);
             var prefabToSpawn = potionPrefabs[randomIndex];
             var obj = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
+            
+            EventManager.RaisePotionSpawned(prefabToSpawn.name, spawnPos);
+            
             StartCoroutine(DestroyObject(obj));
             yield return new WaitForSeconds(Random.Range(0.5f, 2f));
         }
@@ -56,10 +58,10 @@ public class PotionSpawner : MonoBehaviour
         while (_currentTime > 0)
         {
             _currentTime -= Time.deltaTime;
-            OnTimerUpdated?.Invoke(_currentTime);
+            EventManager.RaiseTimerUpdate(_currentTime);
             yield return null;
         }
-
+        EventManager.RaiseGameEnded(GameManager.Instance.CurrentScore);
         _isSpawning = false;
     }
 

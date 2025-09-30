@@ -1,25 +1,26 @@
-using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI timerText;
-    private int _currentScore = 0;
+    [SerializeField] private Sprite pauseSprite;
+    [SerializeField] private Sprite playSprite;
+    [SerializeField] private Image buttonImage;
 
-    public static event Action<int> OnScoreChanged;
+    private bool _isPaused = false;
 
     private void OnEnable()
     {
-        OnScoreChanged += IncreaseScore;
-        PotionSpawner.OnTimerUpdated += UpdateTimerUI;
+        EventManager.OnScoreUpdated += UpdateScoreUI;
+        EventManager.OnTimerUpdated += UpdateTimerUI;
     }
 
-    private void IncreaseScore(int amount)
+    private void UpdateScoreUI(int newScore, int delta)
     {
-        _currentScore += amount;
-        scoreText.text = $"Score: {_currentScore.ToString()}";
+        scoreText.text = $"Score: {newScore}";
     }
 
     private void UpdateTimerUI(float timeRemaining)
@@ -30,14 +31,25 @@ public class UIManager : MonoBehaviour
         timerText.text = $"Timer: {minutes:00}:{seconds:00}";
     }
 
-    public static void RaiseScoreChanged(int amount)
+    public void TogglePause()
     {
-        OnScoreChanged?.Invoke(amount);
+        _isPaused = !_isPaused;
+
+        if (_isPaused)
+        {
+            EventManager.RaiseGamePaused();
+            buttonImage.sprite = playSprite;
+        }
+        else
+        {
+            EventManager.RaiseGameResumed();
+            buttonImage.sprite = pauseSprite;
+        }
     }
 
     private void OnDisable()
     {
-        OnScoreChanged -= IncreaseScore;
-        PotionSpawner.OnTimerUpdated -= UpdateTimerUI;
+        EventManager.OnScoreUpdated -= UpdateScoreUI;
+        EventManager.OnTimerUpdated -= UpdateTimerUI;
     }
 }

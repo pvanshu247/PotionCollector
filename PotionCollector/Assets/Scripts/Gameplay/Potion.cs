@@ -41,7 +41,8 @@ public class Potion : MonoBehaviour
     {
         if (_isCollected) return;
         _isCollected = true;
-        UIManager.RaiseScoreChanged(1);
+        EventManager.RaisePotionCollected(gameObject.name, 1);
+        GameManager.Instance.AddScore(1);
         transform.DOScale(Vector3.zero, 0.2f)
             .SetEase(Ease.InBack)
             .OnComplete(() => Destroy(gameObject));
