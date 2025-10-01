@@ -46,6 +46,6 @@ public class Potion : MonoBehaviour
         GameManager.Instance.AddScore(1);
         transform.DOScale(Vector3.zero, 0.2f)
             .SetEase(Ease.InBack)
-            .OnComplete(() => Addressables.ReleaseInstance(gameObject));
+            .OnComplete(() => Destroy(gameObject));
     }
 }
