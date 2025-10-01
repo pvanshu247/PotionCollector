@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 0b9f8858b64314c5ea03c457d8377f6b
+  m_SerializeEntries:
+  - m_GUID: a951542544bfd4ad6866496624669676
+    m_Address: Assets/Prefabs/POTION E.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aedc940a8ff2b4fffbea43f7fa869580
+    m_Address: Assets/Prefabs/POTION B.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8e4e585dfde348ec80c53d5498288ce
+    m_Address: Assets/Prefabs/POTION A.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0b06774c87e3422d8ba3c7ca8cc5f20
+    m_Address: Assets/Prefabs/POTION D.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb263f4704b2543ea84e4e9932cafedf
+    m_Address: Assets/Prefabs/POTION C.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: c62df3260540b40bdb40ed6443ada261, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 602f8d073c81a453bbe1f3d594bd8310, type: 2}
+    - {fileID: 11400000, guid: 2886a9f0c520f44558863980e77ecefc, type: 2}

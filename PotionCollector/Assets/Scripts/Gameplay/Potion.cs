@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.AddressableAssets;
 
 public class Potion : MonoBehaviour
 {
@@ -45,6 +46,6 @@ public class Potion : MonoBehaviour
         GameManager.Instance.AddScore(1);
         transform.DOScale(Vector3.zero, 0.2f)
             .SetEase(Ease.InBack)
-            .OnComplete(() => Destroy(gameObject));
+            .OnComplete(() => Addressables.ReleaseInstance(gameObject));
     }
 }

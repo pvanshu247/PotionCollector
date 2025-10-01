@@ -1844,7 +1844,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7, y: 0, z: 21}
+  m_Size: {x: 7, y: 0, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1835468775
 Transform:
@@ -2061,11 +2061,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   potionPrefabs:
-  - {fileID: 1682567422316685028, guid: c8e4e585dfde348ec80c53d5498288ce, type: 3}
-  - {fileID: 8176600786737770877, guid: aedc940a8ff2b4fffbea43f7fa869580, type: 3}
-  - {fileID: 3904505315350786137, guid: fb263f4704b2543ea84e4e9932cafedf, type: 3}
-  - {fileID: 4318365372895343457, guid: d0b06774c87e3422d8ba3c7ca8cc5f20, type: 3}
-  - {fileID: 5336842777455159129, guid: a951542544bfd4ad6866496624669676, type: 3}
+  - m_AssetGUID: c8e4e585dfde348ec80c53d5498288ce
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: aedc940a8ff2b4fffbea43f7fa869580
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: fb263f4704b2543ea84e4e9932cafedf
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: d0b06774c87e3422d8ba3c7ca8cc5f20
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: a951542544bfd4ad6866496624669676
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   spawnInterval: 2
   spawnAreaCollider: {fileID: 1835468774}
   totalTime: 120
